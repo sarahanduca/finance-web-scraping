@@ -17,9 +17,10 @@ def get_dynamic_data(stock_code):
     for news in news_list:
         div = news.find("div")
         if(div.has_attr("data-test-locator") and div["data-test-locator"] == "mega"):
+            link = news.select_one("div > div > div > h3 > a")
             news_results.append(
                 {
-                    "link": news.select_one("div > div > div > h3 > a")["href"] if news.select_one("div > div > div > h3 > a") else None,
+                    "link": link["href"] if link else None,
                     "title": news.find("h3").get_text(),
                 }
             )
