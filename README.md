@@ -12,7 +12,7 @@ As empresas escolhidas foram:
 
 ## Metodologia
 
-Para e extração de dados foi utilizado o método de _Web Scraping_ com a biblioteca [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) e a utilização da biblioteca [Selenium](https://www.selenium.dev/documentation/webdriver/), para o _scraping_ de dados renderizados por JavaScript.
+Para extração de dados foi utilizado o método de _Web Scraping_ com a biblioteca [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) e a utilização da biblioteca [Selenium](https://www.selenium.dev/documentation/webdriver/), para o _scraping_ de dados renderizados por JavaScript.
 Os dados foram armazenados em um arquivo _.csv_, utilizando a biblioteca [Pandas](https://pandas.pydata.org/), o que facilitou tanto o armazenamento, quanto a utilização e leitura desses dados.
 A tabela contém as seguintes colunas:
 
@@ -47,10 +47,12 @@ python main.py VALE3.SA
 
 ## Resultados
 
-Utilizando a biblioteca [Matplotlib](https://matplotlib.org/) e a [yfinance](https://pypi.org/project/yfinance/) foi possível gerar os seguinte gráfico de cada empresa, em período de tempo referente ao das notícias publicadas pesquisadas anteriormente:
+Utilizando a biblioteca [Matplotlib](https://matplotlib.org/) e a [yfinance](https://pypi.org/project/yfinance/) foi possível gerar o seguinte gráfico de cada empresa, em período de tempo referente ao das notícias publicadas e pesquisadas anteriormente:
 
 ![Gráfico da empresa em periodo de tempo](image.png)
 
 E também foi possível gerar o gráfico da polaridade e subjetividade das notícias em período de tempo:
 
 ![Grafico da polaridade e subjetividade das noticias em periodo de tempo](image-1.png)
+
+Com ambos os gráficos, foi possível observar que a polaridade e subjetividade das notícias, podendo assim formular uma hipótese de que a polaridade e subjetividade das notícias influenciam no valor da bolsa de valores.
