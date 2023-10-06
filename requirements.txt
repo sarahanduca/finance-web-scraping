@@ -11,5 +11,5 @@ textblob
 yfinance
 
 #Visualização de dados
-matplot
+matplotlib
 seaborn 
