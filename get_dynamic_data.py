@@ -3,12 +3,14 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
 
-def get_dynamic_data(stock_code):
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(options=chrome_options)
-    url = f"https://finance.yahoo.com/quote/{stock_code}?p={stock_code}"
+URL = "https://finance.yahoo.com/"
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+driver = webdriver.Chrome(options=chrome_options)
+
+def get_news_list(stock_code):    
+    url = f"{URL}quote/{stock_code}?p={stock_code}"
     driver.get(url)
     time.sleep(5)
     soup = BeautifulSoup(driver.page_source, "html.parser")
@@ -18,11 +20,20 @@ def get_dynamic_data(stock_code):
         div = news.find("div")
         if(div.has_attr("data-test-locator") and div["data-test-locator"] == "mega"):
             link = news.select_one("div > div > div > h3 > a")
+            url = f"{URL}{link['href']}"
+            driver.get(url)
+            time.sleep(5)
+            news_soup = BeautifulSoup(driver.page_source, "html.parser")
+            paragraphs = news_soup.find("div", attrs={"class":"caas-body"})
             news_results.append(
                 {
                     "link": link["href"] if link else None,
                     "title": news.find("h3").get_text(),
+                    "content": "\n".join([p.get_text() for p in paragraphs.find_all("p")]) if paragraphs else None,
+                    "date": news_soup.find("time")["datetime"]
                 }
             )
     driver.quit()
     return news_results
+
+
