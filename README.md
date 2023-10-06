@@ -16,8 +16,8 @@ Para e extração de dados foi utilizado o método de _Web Scraping_ com a bibli
 Os dados foram armazenados em um arquivo _.csv_, utilizando a biblioteca [Pandas](https://pandas.pydata.org/), o que facilitou tanto o armazenamento, quanto a utilização e leitura desses dados.
 A tabela contém as seguintes colunas:
 
-| Link | Title | Content | Date |
-| ---- | ----- | ------- | ---- |
+| Link | Title | Content | Date | Polarity | Subjectivity |
+| ---- | ----- | ------- | ---- | -------- | ------------ |
 
 Para a análise de sentimento foi utilizado o método de [Análise de Sentimento](https://pt.wikipedia.org/wiki/An%C3%A1lise_de_sentimento) com a biblioteca [TextBlob](https://textblob.readthedocs.io/en/dev/), que tem a propriedade _sentiment_ retornando _Sentiment(polarity, subjectivity)_. Onde _polarity_ é um valor entre [-1, 1] indicando a positividade ou negatividade do texto, e _subjectivity_ é um valor entre [0, 1] indicando o quão objetivo ou subjetivo é o texto.
 
