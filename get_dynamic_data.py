@@ -10,8 +10,8 @@ chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
 
 def get_news_list(stock_code):    
-    url = f"{URL}quote/{stock_code}?p={stock_code}"
-    driver.get(url)
+    news_list_url = f"{URL}quote/{stock_code}?p={stock_code}"
+    driver.get(news_list_url)
     time.sleep(5)
     soup = BeautifulSoup(driver.page_source, "html.parser")
     news_list = soup.find_all("li", class_="js-stream-content")
@@ -20,8 +20,8 @@ def get_news_list(stock_code):
         div = news.find("div")
         if(div.has_attr("data-test-locator") and div["data-test-locator"] == "mega"):
             link = news.select_one("div > div > div > h3 > a")
-            url = f"{URL}{link['href']}"
-            driver.get(url)
+            news_url = f"{URL}{link['href']}"
+            driver.get(news_url)
             time.sleep(5)
             news_soup = BeautifulSoup(driver.page_source, "html.parser")
             paragraphs = news_soup.find("div", attrs={"class":"caas-body"})
