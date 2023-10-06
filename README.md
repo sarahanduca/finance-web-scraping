@@ -7,8 +7,8 @@ O objetivo deste trabalho foi de aplicar o conhecimento adquirido na disciplina 
 As empresas escolhidas foram:
 
 - [Itau - ITUB4.SA](https://finance.yahoo.com/quote/ITUB?p=ITUB&.tsrc=fin-srch)
-- [Petrobras - PETR4](https://finance.yahoo.com/quote/PBR?p=PBR&.tsrc=fin-srch)
-- [Magazine Luiza - MGLU3](https://finance.yahoo.com/quote/MGLU3.SA?p=MGLU3.SA&.tsrc=fin-srch)
+- [Petrobras - PETR4.SA](https://finance.yahoo.com/quote/PBR?p=PBR&.tsrc=fin-srch)
+- [Vale - VALE3.SA](https://finance.yahoo.com/quote/VALE3.SA?p=VALE3.SA&.tsrc=fin-srch)
 
 ## Metodologia
 

@@ -1,1 +1,1 @@
-from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
+from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIAP

@@ -29,11 +29,14 @@ def get_news_list(stock_code):
                 {
                     "link": link["href"] if link else None,
                     "title": news.find("h3").get_text(),
-                    "content": "\n".join([p.get_text() for p in paragraphs.find_all("p")]) if paragraphs else None,
-                    "date": news_soup.find("time")["datetime"]
+                    "content": get_non_link_paragraphs(paragraphs) if paragraphs else None,
+                    "date": news_soup.find("time")["datetime"][0:10]
                 }
             )
     driver.quit()
     return news_results
 
 
+def get_non_link_paragraphs(div):
+    paragraphs = div.find_all("p")
+    return "\n".join([p.get_text() for p in paragraphs if not p.find("a")])
