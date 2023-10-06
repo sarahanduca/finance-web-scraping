@@ -34,7 +34,7 @@ para instalar as dependências do projeto.
 Então
 
 ```bash
-python yahoo_finance_news.py codigo_da_empresa
+python main.py codigo_da_empresa
 ```
 
 para extrair os dados do site do Yahoo Finance.
@@ -42,5 +42,5 @@ para extrair os dados do site do Yahoo Finance.
 Exemplo
 
 ```bash
-python yahoo_finance_news.py ITUB4.SA
+python main.py ITUB4.SA
 ```
