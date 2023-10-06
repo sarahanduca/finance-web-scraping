@@ -1,5 +1,15 @@
-nltk 
+#Extração e armazenamento de dados
 pandas 
 selenium 
 beautifulsoup4
+
+#Análise de sentimento
+nltk 
 textblob
+
+#Coleta de dados da bolsa de valores
+yfinance
+
+#Visualização de dados
+matplot
+seaborn 

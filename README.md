@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 para instalar as dependências do projeto.
 
-Então
+### Execução
 
 ```bash
 python main.py codigo_da_empresa
@@ -42,5 +42,15 @@ para extrair os dados do site do Yahoo Finance.
 Exemplo
 
 ```bash
-python main.py ITUB4.SA
+python main.py VALE3.SA
 ```
+
+## Resultados
+
+Utilizando a biblioteca [Matplotlib](https://matplotlib.org/) e a [yfinance](https://pypi.org/project/yfinance/) foi possível gerar os seguinte gráfico de cada empresa, em período de tempo referente ao das notícias publicadas pesquisadas anteriormente:
+
+![Gráfico da empresa em periodo de tempo](image.png)
+
+E também foi possível gerar o gráfico da polaridade e subjetividade das notícias em período de tempo:
+
+![Grafico da polaridade e subjetividade das noticias em periodo de tempo](image-1.png)
